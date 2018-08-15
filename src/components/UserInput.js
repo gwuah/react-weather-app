@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
 class UserInput extends Component {
   constructor(props) {
@@ -9,20 +10,13 @@ class UserInput extends Component {
   }
 
   handleInput(e) {
-    console.log("thisd", this);
     this.setState({ city: e.target.value });
   }
 
   handleClick(e) {
-    console.log(e);
-    console.log("this", this);
     if (this.state.city === "") return;
     this.props.selectedCity(this.state.city);
     this.setState({ city: "" });
-  }
-
-  getData() {
-    axios.get
   }
 
   render() {
